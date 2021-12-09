@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "376336215442",
+    "firebase_url": "https://semilla-viva.firebaseio.com",
+    "project_id": "semilla-viva",
+    "storage_bucket": "semilla-viva.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376336215442:android:77b42a6b4c7c61c084a54b",
+        "android_client_info": {
+          "package_name": "com.example.semillaviva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376336215442-q86kgt7bgls9la4ld2jrnjmec8bfe0nl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQAXeMMNxZnVMzL82JxWaHtrfFY1Xfgkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376336215442-q86kgt7bgls9la4ld2jrnjmec8bfe0nl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

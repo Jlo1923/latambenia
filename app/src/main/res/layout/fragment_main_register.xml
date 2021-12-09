@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.example.semillaviva.ui.auth.AuthViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_dos"
+        tools:context=".ui.auth.AuthActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="163dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="REGISTRAR DATOS"
+                    android:textColor="@color/purple_200"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints" />
+
+                <LinearLayout
+                    android:id="@+id/ly0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputCedula"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:hint="Número de documento *"
+                        android:orientation="vertical"
+                        app:boxStrokeColor="@color/transparent"
+                        app:hintTextColor="@color/teal_700"
+                        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView"
+                        app:placeholderTextColor="@color/teal_700">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditTextc"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number"
+                            tools:ignore="MissingConstraints" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:hint="Nombre completo *"
+                        android:orientation="vertical"
+                        app:boxStrokeColor="@color/transparent"
+                        app:hintTextColor="@color/teal_700"
+                        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:placeholderTextColor="@color/teal_700">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            tools:ignore="MissingConstraints" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:hint="Telefonos *"
+                        android:orientation="vertical"
+                        app:boxStrokeColor="@color/transparent"
+                        app:hintTextColor="@color/teal_700"
+                        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:placeholderTextColor="@color/teal_700">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            tools:ignore="MissingConstraints" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputRestricciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:hint="Hora y medio de atención"
+                        android:orientation="vertical"
+                        app:boxStrokeColor="@color/transparent"
+                        app:hintTextColor="@color/teal_700"
+                        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView"
+                        app:placeholderTextColor="@color/teal_700">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditText3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            tools:ignore="MissingConstraints" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputDirecciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:hint="Dirección e indicaciones *"
+                        android:orientation="vertical"
+                        app:boxStrokeColor="@color/transparent"
+                        app:hintTextColor="@color/teal_700"
+                        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:placeholderTextColor="@color/teal_700">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditText4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            tools:ignore="MissingConstraints" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:hint="Contraseña *"
+                        android:orientation="vertical"
+                        app:boxStrokeColor="@color/transparent"
+                        app:hintTextColor="@color/teal_700"
+                        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:placeholderTextColor="@color/teal_700">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditText7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textPassword"
+                            tools:ignore="MissingConstraints" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgUser"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/add_user"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/buttonBack"
+                        style="@style/Widget.App.Button"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Atras"
+                        tools:ignore="MissingConstraints" />
+
+                    <Button
+                        android:id="@+id/buttonReg"
+                        style="@style/Widget.App.Button"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:enabled="false"
+                        android:text="@string/registrarse"
+                        tools:ignore="MissingConstraints" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
