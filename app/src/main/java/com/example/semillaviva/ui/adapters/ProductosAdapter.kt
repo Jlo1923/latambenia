@@ -18,15 +18,23 @@ import java.util.*
 import kotlin.collections.ArrayList
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import android.widget.Toast
+
+import androidx.recyclerview.widget.ItemTouchHelper
+
+import androidx.annotation.NonNull
+
+
+
 
 class ProductosAdapter(private var readingsList: ArrayList<Producto>) :
         RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
     var filterList = ArrayList<Producto>()
     lateinit var mcontext: Context
 
-    class CountryHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
-    private val database: FirebaseDatabase? = null
+    private var database: FirebaseDatabase? = null
     private var databaseReference: DatabaseReference? = null
     init {
         filterList = readingsList
@@ -35,8 +43,10 @@ class ProductosAdapter(private var readingsList: ArrayList<Producto>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val countryListView =
                 LayoutInflater.from(parent.context).inflate(R.layout.productos_adapter, parent, false)
-        val sch = CountryHolder(countryListView)
+        val sch = ViewHolder(countryListView)
         mcontext = parent.context
+        database = FirebaseDatabase.getInstance()
+        databaseReference = database!!.getReference("elementos")
         return sch
     }
 
@@ -64,13 +74,22 @@ class ProductosAdapter(private var readingsList: ArrayList<Producto>) :
             Picasso.with(mcontext).load(filterList[position].imagen).into(imageView)
         }
 
-       /* databaseReference = database!!.getReference("elementos")
         ivDelete.setOnClickListener {
             databaseReference!!.child(filterList[position].id).removeValue();
             filterList.removeAt(position)
             notifyDataSetChanged()
             Toast.makeText(mcontext, "se elimino", Toast.LENGTH_LONG).show()
-        }*/
+        }
+    }
+
+    fun remove(position: Int) {
+        filterList.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
+    fun restoreItem(prduct: Producto, position: Int) {
+        filterList.add(position, prduct)
+        notifyItemRemoved(position)
     }
 
     override fun getFilter(): Filter {

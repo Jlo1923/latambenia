@@ -2,9 +2,11 @@ package com.example.semillaviva.ui.splash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
+import com.example.semillaviva.MainActivity
 import com.example.semillaviva.MenuActivity
 import com.example.semillaviva.R
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,16 +28,24 @@ class SplashActivity : AppCompatActivity() {
             DataBindingUtil.setContentView(this, R.layout.activity_splash)
 
         loadPreferences()
-        binding.viewModel = vm
-        vm.timer.observe(this){
+     //   binding.viewModel = vm
+      //  vm.timer.observe(this){
+
+           exitSplashScreen()
+        //}
+    }
+
+    private fun exitSplashScreen() {
+        val handler = Handler()
+        handler.postDelayed({
             if (isLogged){
                 goToMapsActivity()
             }else{
                 goToMainActivity()
             }
-        }
+            this.finish()
+        }, 3000)
     }
-
     private fun goToMapsActivity() {
         finish()
         startActivity(Intent(this, MenuActivity::class.java))
